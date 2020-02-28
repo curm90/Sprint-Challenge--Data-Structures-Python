@@ -13,14 +13,20 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-binary_search_tree = BinarySearchTree(names_1[0])
+set1 = set(names_1)
+set2 = set(names_2)
 
-for name in names_1:
-    binary_search_tree.insert(name)
 
-for name in names_2:
-    if binary_search_tree.contains(name):
-        duplicates.append(name)
+duplicates = set1.intersection(set2)
+
+# binary_search_tree = BinarySearchTree(names_1[0])
+
+# for name in names_1:
+#     binary_search_tree.insert(name)
+
+# for name in names_2:
+#     if binary_search_tree.contains(name):
+#         duplicates.append(name)
 
 
 # Runtime is O(n^2)
